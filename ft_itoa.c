@@ -1,7 +1,4 @@
-//TODO : #include "libft.c"
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 char *ft_itoa(int n){
     char *s;

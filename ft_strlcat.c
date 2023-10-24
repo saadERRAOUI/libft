@@ -1,11 +1,9 @@
-//Todo : #include "libft.h"
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 size_t  ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize) {
     size_t i = 0;
-    size_t size_dst = strlen(dst);//Todo : change to ft_strlen
-    size_t size_src = strlen(src);//Todo : change to ft_strlen
+    size_t size_dst = ft_strlen(dst);
+    size_t size_src = ft_strlen(src);
 
     if(dstsize == 0 || size_dst <= size_src) {
         return (size_dst);

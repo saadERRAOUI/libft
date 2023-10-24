@@ -1,7 +1,4 @@
-//TODO : #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 char *ft_strjoin(char const *s1, char const *s2) {
     
@@ -12,8 +9,8 @@ char *ft_strjoin(char const *s1, char const *s2) {
  
     if(!s1 || !s2)
         return (NULL);
-    size_S1 = strlen(s1); //Todo : change to ft_strlen
-    size_S2 = strlen(s2); //Todo : change to ft_strlen
+    size_S1 = ft_strlen(s1);
+    size_S2 = ft_strlen(s2);
     if(!(ptr = malloc((size_S1 + size_S2 + 1) * sizeof(char)))) 
         return (NULL);
     i = 0;

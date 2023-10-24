@@ -1,7 +1,4 @@
-//Todo : #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 int ft_atoi(const char *str) {
     long number;
