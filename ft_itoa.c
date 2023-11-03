@@ -1,5 +1,6 @@
 #include "libft.h"
 
+
 char *ft_itoa(int n){
     char *s;
     int i;
@@ -37,13 +38,11 @@ char *ft_itoa(int n){
         i++;
     }
     if(sign == -1){
-        printf("%i\n", digitCount + 1);
         s[digitCount + 1] = '\0';
     }
     else {
         s[digitCount] = '\0';
-        printf("%i\n", digitCount);
     }
-
+    
     return (s);
 }

@@ -5,7 +5,7 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char)) {
     char *str;
 
     i = 0;
-    if(!(str = malloc(sizeof(char) * (strlen(s) + 1)))) //Todo : change to ft_strlen
+    if(!(str = malloc(sizeof(char) * (ft_strlen(s) + 1)))) //Todo : change to ft_strlen
         return (NULL);
     while(s[i])
     {

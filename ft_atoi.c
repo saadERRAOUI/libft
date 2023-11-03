@@ -1,25 +1,25 @@
 #include "libft.h"
 
-int ft_atoi(const char *str) {
-    long number;
-    int i;
-    int isNegative;
+int     ft_atoi(const char *str) {
+    long    number;
+    int     i;
+    int     isNegative;
 
     number = 0;
     i = 0;
     isNegative = 1;
-    while(str[i] && (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13)))
+    while (str[i] && (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13)))
         i++;
-    if(str[i] == '-') 
+    if (str[i] == '-') 
     {
         isNegative = -1;
         i++;
     } 
-    else if(str[i] == '+') 
+    else if (str[i] == '+') 
     {
         i++;
     }
-    while(str[i] && isdigit(str[i]))
+    while (str[i] && ft_isdigit(str[i]))
     {
         if (number < 0 && isNegative ==  -1)
 			return (0);

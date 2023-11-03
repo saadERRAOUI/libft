@@ -13,7 +13,6 @@ int count_words(char const *s, char c) {
     }
     if(s[i - 1] != c)
         chuncks_number += 1;
-    printf("%i\n", chuncks_number);
     return (chuncks_number);
 }
 
@@ -55,7 +54,7 @@ char **ft_split(char const *s, char c) {
     offset = 0;
     while(i < chuncks_number) {
         if(!(str[i] = malloc((count_word_len(&s[offset], c) + 1) * sizeof(char))))
-            return (free_allocation(str, offset - 1)); //Todo : create a function to free the allocated memory before returning;
+            return (free_allocation(str, offset - 1));
         j = 0;
         while(s[offset] == c)
             offset++;
@@ -67,11 +66,4 @@ char **ft_split(char const *s, char c) {
     str[i] = NULL;
     
     return (str);
-}
-
-int main() {
-    char a[] = "saad erraoui TEST  ";
-    char **b = ft_split(a, ' ');
-    printf("%lu\n", strlen(b[0]));
-    printf("%s\n", (b[0]));
 }
