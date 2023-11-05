@@ -6,7 +6,7 @@
 /*   By: serraoui <serraoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 12:41:21 by serraoui          #+#    #+#             */
-/*   Updated: 2023/11/05 12:41:52 by serraoui         ###   ########.fr       */
+/*   Updated: 2023/11/05 15:51:32 by serraoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ char	*ft_strrchr(const char *s, int c)
 	ptr = 0;
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == (char)c)
 			ptr = (char *)s;
 		++s;
 	}
 	if (ptr)
 		return (ptr);
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)s);
 	return (NULL);
 }
