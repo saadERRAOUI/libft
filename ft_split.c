@@ -6,7 +6,7 @@
 /*   By: serraoui <serraoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 12:04:29 by serraoui          #+#    #+#             */
-/*   Updated: 2023/11/05 12:17:13 by serraoui         ###   ########.fr       */
+/*   Updated: 2023/11/05 14:34:41 by serraoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int	count_words(char const *s, char c)
 
 	i = 0;
 	chuncks_number = 0;
+	while (s[i] && s[i] == c)
+		i++;
 	while (s[i])
 	{
 		if (s[i] == c && s[i - 1] != c)
@@ -35,6 +37,8 @@ static int	count_word_len(char const *s, char c)
 	int	i;
 	int	len;
 
+	i = 0;
+	len = 0;
 	while (s[i] == c)
 		i++;
 	while (s[i] != c)
@@ -82,7 +86,11 @@ char	**ft_split(char const *s, char c)
 		while (s[offset] == c)
 			offset++;
 		while (s[offset] && s[offset] != c)
-			str[i][j++] = s[offset++];
+		{
+			str[i][j] = s[offset];
+			j++;
+			offset++;
+		}
 		str[i][j] = '\0';
 		i++;
 	}
