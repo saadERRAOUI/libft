@@ -1,7 +1,4 @@
-# todo : first time writing a make file 
-#Name the libft.a file as the TARGET
-
-TARGET = libft.a
+NAME = libft.a
 
 SOURCES = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c \
@@ -11,16 +8,16 @@ ft_tolower.c ft_toupper.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
-$(TARGET): 
+$(NAME): 
 	gcc -c $(SOURCES)
-	ar -rc $(TARGET) $(OBJECTS)
+	ar -rc $(NAME) $(OBJECTS)
 
-all: $(TARGET)
+all: $(NAME)
 
 clean:
 	rm -f $(OBJECTS)
 
 fclean: clean
-	rm -f $(TARGET)
+	rm -f $(NAME)
 
 re: fclean all
