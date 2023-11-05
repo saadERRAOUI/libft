@@ -67,17 +67,13 @@ char	**ft_split(char const *s, char c)
 	int		offset;
 	int		j;
 	int		i;
-	int		chuncks_number;
 
-	if (!s || !c)
-		return (NULL);
-	chuncks_number = count_words(s, c);
-	str = malloc((chuncks_number + 1) * sizeof(char *));
+	str = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!str)
 		return (NULL);
 	offset = 0;
 	i = 0;
-	while (i < chuncks_number)
+	while (i < count_words(s, c))
 	{
 		str[i] = malloc((count_word_len(&s[offset], c) + 1) * sizeof(char));
 		if (!str[i])
