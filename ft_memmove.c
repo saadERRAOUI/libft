@@ -6,7 +6,7 @@
 /*   By: serraoui <serraoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 11:50:10 by serraoui          #+#    #+#             */
-/*   Updated: 2023/11/05 11:53:29 by serraoui         ###   ########.fr       */
+/*   Updated: 2023/11/06 18:23:17 by serraoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*d;
-	unsigned char	*s;
+	char	*d;
+	char	*s;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
+	d = (char *)dst;
+	s = (char *)src;
 	if (!len)
 		return (dst);
 	else if (d <= s)
