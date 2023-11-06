@@ -6,7 +6,7 @@
 /*   By: serraoui <serraoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 12:04:29 by serraoui          #+#    #+#             */
-/*   Updated: 2023/11/05 14:34:41 by serraoui         ###   ########.fr       */
+/*   Updated: 2023/11/06 09:27:32 by serraoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ static int	count_word_len(char const *s, char c)
 
 	i = 0;
 	len = 0;
+	if (!s || s[0] == '\0')
+		return (0);
 	while (s[i] == c)
 		i++;
 	while (s[i] != c)
@@ -68,11 +70,11 @@ char	**ft_split(char const *s, char c)
 	int		j;
 	int		i;
 
-	str = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!str)
-		return (NULL);
 	offset = 0;
 	i = 0;
+	str = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!s || !str)
+		return (NULL);
 	while (i < count_words(s, c))
 	{
 		str[i] = malloc((count_word_len(&s[offset], c) + 1) * sizeof(char));
@@ -82,11 +84,7 @@ char	**ft_split(char const *s, char c)
 		while (s[offset] == c)
 			offset++;
 		while (s[offset] && s[offset] != c)
-		{
-			str[i][j] = s[offset];
-			j++;
-			offset++;
-		}
+			str[i][j++] = s[offset++];
 		str[i][j] = '\0';
 		i++;
 	}
