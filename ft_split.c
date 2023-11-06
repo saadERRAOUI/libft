@@ -6,7 +6,7 @@
 /*   By: serraoui <serraoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 12:04:29 by serraoui          #+#    #+#             */
-/*   Updated: 2023/11/06 09:27:32 by serraoui         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:41:21 by serraoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,9 @@ static int	count_word_len(char const *s, char c)
 
 	i = 0;
 	len = 0;
-	if (!s || s[0] == '\0')
-		return (0);
-	while (s[i] == c)
+	while (s[i] && s[i] == c)
 		i++;
-	while (s[i] != c)
+	while (s[i] && s[i] != c)
 	{
 		len++;
 		i++;
@@ -63,17 +61,32 @@ static void	*free_allocation(char **s, int count)
 	return (NULL);
 }
 
+static char	**void_case(void)
+{
+	char	**str;
+
+	str = malloc(1 * sizeof(char *));
+	if (!str)
+	{
+		return (free_allocation(str, 0));
+	}
+	str[0] = NULL;
+	return (str);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
 	int		offset;
-	int		j;
+	int		j;remo
 	int		i;
 
 	offset = 0;
 	i = 0;
+	if (!s || *s == '\0')
+		return (void_case());
 	str = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!s || !str)
+	if (!str)
 		return (NULL);
 	while (i < count_words(s, c))
 	{
