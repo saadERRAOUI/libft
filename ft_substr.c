@@ -6,7 +6,7 @@
 /*   By: serraoui <serraoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 12:47:35 by serraoui          #+#    #+#             */
-/*   Updated: 2023/11/05 17:18:51 by serraoui         ###   ########.fr       */
+/*   Updated: 2023/11/06 14:25:00 by serraoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
-	int		i;
+	size_t	i;
 
 	if (s[0] == '\0' || start > ft_strlen(s))
 	{
@@ -25,6 +25,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		str[0] = '\0';
 		return (str);
 	}
+	if (ft_strlen(s) - start < (unsigned int)len)
+		len = ft_strlen(s) - start;
 	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);

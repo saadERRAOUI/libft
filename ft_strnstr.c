@@ -6,7 +6,7 @@
 /*   By: serraoui <serraoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 12:38:03 by serraoui          #+#    #+#             */
-/*   Updated: 2023/11/05 16:47:31 by serraoui         ###   ########.fr       */
+/*   Updated: 2023/11/06 14:06:08 by serraoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strnstr(const char *hstack, const char *ndle, size_t len)
 {
-	int		i;
-	size_t	size_n;
-	int		j;
+	size_t		i;
+	size_t		size_n;
+	size_t		j;
 
 	i = 0;
 	size_n = ft_strlen(ndle);

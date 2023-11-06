@@ -6,7 +6,7 @@
 /*   By: serraoui <serraoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 11:40:49 by serraoui          #+#    #+#             */
-/*   Updated: 2023/11/05 12:00:53 by serraoui         ###   ########.fr       */
+/*   Updated: 2023/11/06 14:01:42 by serraoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ char	*is_positive(long n, int digit_count)
 
 char	*ft_itoa(int n)
 {
-	char	*s;
-	int		i;
 	long	temp;
 	int		digit_count;
 

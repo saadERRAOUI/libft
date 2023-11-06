@@ -9,7 +9,7 @@ ft_tolower.c ft_toupper.c
 OBJECTS = $(SOURCES:.c=.o)
 
 $(NAME): 
-	gcc -c $(SOURCES)
+	gcc -c -Wall -Wextra -Werror $(SOURCES)
 	ar -rc $(NAME) $(OBJECTS)
 
 all: $(NAME)
