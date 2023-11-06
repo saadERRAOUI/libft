@@ -6,7 +6,7 @@
 /*   By: serraoui <serraoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 12:04:29 by serraoui          #+#    #+#             */
-/*   Updated: 2023/11/06 13:59:34 by serraoui         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:14:11 by serraoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int	count_words(char const *s, char c)
 
 	i = 0;
 	chuncks_number = 0;
+	if (*s == '\0')
+		return (chuncks_number);
 	while (s[i] && s[i] == c)
 		i++;
 	while (s[i])
@@ -61,19 +63,6 @@ static void	*free_allocation(char **s, int count)
 	return (NULL);
 }
 
-static char	**void_case(void)
-{
-	char	**str;
-
-	str = malloc(1 * sizeof(char *));
-	if (!str)
-	{
-		return (free_allocation(str, 0));
-	}
-	str[0] = NULL;
-	return (str);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
@@ -83,10 +72,8 @@ char	**ft_split(char const *s, char c)
 
 	offset = 0;
 	i = 0;
-	if (!s || *s == '\0')
-		return (void_case());
 	str = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!str)
+	if (!s || !str)
 		return (NULL);
 	while (i < count_words(s, c))
 	{

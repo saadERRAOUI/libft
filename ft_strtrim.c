@@ -6,7 +6,7 @@
 /*   By: serraoui <serraoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 12:41:57 by serraoui          #+#    #+#             */
-/*   Updated: 2023/11/06 16:37:13 by serraoui         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:08:57 by serraoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	nav = 0;
 	while (check_set(s1[start], set))
 		start++;
-	while (check_set(s1[end - 1], set) && end > start)
+	while (end > start && check_set(s1[end - 1], set))
 		end--;
-	trimed = malloc((end - start + 1) * sizeof(char));
+	trimed = (char *)malloc((end - start + 1) * sizeof(char));
 	if (!trimed)
 		return (NULL);
 	while (nav < end - start)
