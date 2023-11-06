@@ -6,7 +6,7 @@
 /*   By: serraoui <serraoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 12:04:29 by serraoui          #+#    #+#             */
-/*   Updated: 2023/11/06 12:41:21 by serraoui         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:46:20 by serraoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**str;
 	int		offset;
-	int		j;remo
+	int		j;
 	int		i;
 
 	offset = 0;
