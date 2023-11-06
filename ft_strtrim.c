@@ -12,30 +12,41 @@
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+static int	check_set(char c, char const *set)
 {
-	char	*str;
-	int		i;
-	int		size_set;
-	int		size_s1;
+	while (*set != '\0')
+	{
+		if (*set == c)
+			return (1);
+		set++;
+	}
+	return (0);
+}
+
+char		*ft_strtrim(char const *s1, char const *set)
+{
+	char	*strtrim;
+	int		start;
+	int		end;
+	int		nav;
 
 	if (!s1 || !set)
 		return (NULL);
-	size_s1 = ft_strlen(s1);
-	size_set = ft_strlen(set);
-	i = 0;
-	if (ft_strncmp(s1, set, size_set) == 0 
-		&& ft_strncmp((char *)s1 + (size_s1 - size_set), set, size_set) == 0)
+	start = 0;
+	end = ft_strlen(s1);
+	nav = 0;
+	while (check_set(s1[start], set))
+		start++;
+	while (check_set(s1[end - 1], set) && end > start)
+		end--;
+	strtrim = malloc((end - start + 1) * sizeof(char));
+	if (!strtrim)
+		return (NULL);
+	while (nav < end - start)
 	{
-		str = malloc((size_s1 - (2 * size_set) + 1) * sizeof(char));
-		if (!str)
-			return (NULL);
-		while (s1[i + size_set] && i < (size_s1 - (2 * size_set)))
-		{
-			str[i] = s1[i + size_set];
-			i++;
-		}
-		str[i] = '\0';
+		strtrim[nav] = s1[nav + start];
+		nav++;
 	}
-	return (str);
+	strtrim[nav] = '\0';
+	return (strtrim);
 }
